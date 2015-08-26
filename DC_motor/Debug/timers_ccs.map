@@ -1,0 +1,364 @@
+******************************************************************************
+                  TI ARM Linker PC v5.1.6                      
+******************************************************************************
+>> Linked Wed Aug 26 20:40:30 2015
+
+OUTPUT FILE NAME:   <DC_motor.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 000018dd
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  00002844  0003d7bc  R  X
+  SRAM                  20000000   00008000  000004a4  00007b5c  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00002848   00002848    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    00001a6c   00001a6c    r-x .text
+  00001cd8    00001cd8    00000b1c   00000b1c    r-- .const
+  000027f8    000027f8    00000050   00000050    r-- .cinit
+20000000    20000000    000004a4   00000000    rw-
+  20000000    20000000    00000400   00000000    rw- .stack
+  20000400    20000400    00000058   00000000    rw- .data
+  20000458    20000458    0000004c   00000000    rw- .bss
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     startup_ccs.obj (.intvecs)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.text      0    0000026c    00001a6c     
+                  0000026c    00000350     main.obj (.text:main)
+                  000005bc    00000266     grlib-cm4f.lib : string.obj (.text:GrFontGlyphRender)
+                  00000822    000001b6     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_add_t2.obj (.text)
+                  000009d8    00000184     cfal96x64x16.obj (.text:CFAL96x64x16Init)
+                  00000b5c    0000013c     driverlib-cm4f.lib : sysctl.obj (.text:SysCtlClockSet)
+                  00000c98    00000138     cfal96x64x16.obj (.text:CFAL96x64x16PixelDrawMultiple)
+                  00000dd0    00000136     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_div_t2.obj (.text)
+                  00000f06    000000fc                                   : fd_mul_t2.obj (.text)
+                  00001002    00000002     cfal96x64x16.obj (.text:CFAL96x64x16Flush)
+                  00001004    000000f8     main.obj (.text:display)
+                  000010fc    000000c4     grlib-cm4f.lib : string.obj (.text:GrDefaultStringRenderer)
+                  000011c0    000000b0     main.obj (.text:FloatToChar)
+                  00001270    0000009c     main.obj (.text:Timer0IntHandler)
+                  0000130c    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.obj (.text)
+                  000013a8    0000009a     grlib-cm4f.lib : rectangle.obj (.text:GrRectFill)
+                  00001442    00000002     startup_ccs.obj (.text:FaultISR)
+                  00001444    00000094     rtsv7M4_T_le_v4SPD16_eabi.lib : auto_init.obj (.text)
+                  000014d8    0000008e     cfal96x64x16.obj (.text:CFAL96x64x16LineDrawV)
+                  00001566    0000006c     cfal96x64x16.obj (.text:CFAL96x64x16LineDrawH)
+                  000015d2    00000068     grlib-cm4f.lib : string.obj (.text:GrStringWidthGet)
+                  0000163a    00000002     startup_ccs.obj (.text:IntDefaultHandler)
+                  0000163c    00000064     grlib-cm4f.lib : context.obj (.text:GrContextInit)
+                  000016a0    0000005e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_rle.obj (.text)
+                  000016fe    0000005c     grlib-cm4f.lib : string.obj (.text:FontWideGlyphDataGet)
+                  0000175a    00000002     startup_ccs.obj (.text:NmiSR)
+                  0000175c    00000050     cfal96x64x16.obj (.text:CFAL96x64x16WriteCommand)
+                  000017ac    00000050     cfal96x64x16.obj (.text:CFAL96x64x16WriteData)
+                  000017fc    0000004c     main.obj (.text:PortCIntHandler)
+                  00001848    0000004a     grlib-cm4f.lib : string.obj (.text:UpdateContextCharMapping)
+                  00001892    0000004a     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_tos_t2.obj (.text)
+                  000018dc    00000048                                   : boot.obj (.text)
+                  00001924    00000048                                   : fd_toi_t2.obj (.text)
+                  0000196c    00000044                                   : cpy_tbl.obj (.text)
+                  000019b0    00000044                                   : exit.obj (.text)
+                  000019f4    0000003a     grlib-cm4f.lib : string.obj (.text:FontGlyphDataGet)
+                  00001a2e    00000038     rtsv7M4_T_le_v4SPD16_eabi.lib : fs_tod_t2.obj (.text)
+                  00001a66    00000032     cfal96x64x16.obj (.text:CFAL96x64x16PixelDraw)
+                  00001a98    0000002e     driverlib-cm4f.lib : adc.obj (.text:ADCIntStatus)
+                  00001ac6    0000002e     rtsv7M4_T_le_v4SPD16_eabi.lib : i_tofd_t2.obj (.text)
+                  00001af4    0000002a     cfal96x64x16.obj (.text:CFAL96x64x16RectFill)
+                  00001b1e    0000002a     grlib-cm4f.lib : string.obj (.text:GrFontBaselineGet)
+                  00001b48    00000028                    : string.obj (.text:GrStringNextCharGet)
+                  00001b70    00000026                    : string.obj (.text:GrFontInfoGet)
+                  00001b96    00000022                    : string.obj (.text:GrFontGlyphDataGet)
+                  00001bb8    00000020     driverlib-cm4f.lib : adc.obj (.text:ADCSequenceDataGet)
+                  00001bd8    0000001e     grlib-cm4f.lib : string.obj (.text:GrFontCodepageGet)
+                  00001bf6    00000002     --HOLE-- [fill = 0]
+                  00001bf8    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
+                  00001c10    00000016     driverlib-cm4f.lib : adc.obj (.text:ADCProcessorTrigger)
+                  00001c26    00000016     cfal96x64x16.obj (.text:CFAL96x64x16ColorTranslate)
+                  00001c3c    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.text)
+                  00001c50    00000012                                   : copy_zero_init.obj (.text:decompress:ZI)
+                  00001c62    00000002     --HOLE-- [fill = 0]
+                  00001c64    00000010     driverlib-cm4f.lib : fpu.obj (.text:FPUEnable)
+                  00001c74    00000010                        : fpu.obj (.text:FPULazyStackingEnable)
+                  00001c84    00000010     grlib-cm4f.lib : string.obj (.text:GrStringDraw)
+                  00001c94    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
+                  00001ca2    0000000c     driverlib-cm4f.lib : cpu.obj (.text:CPUcpsie)
+                  00001cae    0000000a                        : interrupt.obj (.text:IntMasterEnable)
+                  00001cb8    00000008     grlib-cm4f.lib : charmap.obj (.text:GrMapISO8859_1_Unicode)
+                  00001cc0    00000006                    : string.obj (.text:GrContextFontSet)
+                  00001cc6    00000006     startup_ccs.obj (.text:ResetISR)
+                  00001ccc    00000006     driverlib-cm4f.lib : sysctl.obj (.text:SysCtlDelay)
+                  00001cd2    00000006     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_rle.obj (.text:decompress:rle24)
+
+.const     0    00001cd8    00000b1c     
+                  00001cd8    0000065a     grlib-cm4f.lib : fontcm14.obj (.const:g_pucCm14Data)
+                  00002332    00000002     --HOLE-- [fill = 0]
+                  00002334    000002f8                    : fontfixed6x8.obj (.const:g_pucFontFixed6x8Data)
+                  0000262c    000000c8                    : fontcm14.obj (.const:g_sFontCm14)
+                  000026f4    000000c8                    : fontfixed6x8.obj (.const:g_sFontFixed6x8)
+                  000027bc    00000028     cfal96x64x16.obj (.const:g_sCFAL96x64x16)
+                  000027e4    00000010     grlib-cm4f.lib : context.obj (.const)
+
+.cinit     0    000027f8    00000050     
+                  000027f8    00000028     (.cinit..data.load) [load image, compression = rle]
+                  00002820    0000000c     (__TI_handler_table)
+                  0000282c    00000004     --HOLE-- [fill = 0]
+                  00002830    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00002838    00000010     (__TI_cinit_table)
+
+.stack     0    20000000    00000400     UNINITIALIZED
+                  20000000    00000400     --HOLE--
+
+.data      0    20000400    00000058     UNINITIALIZED
+                  20000400    00000030     main.obj (.data)
+                  20000430    00000013     cfal96x64x16.obj (.data)
+                  20000443    00000001     --HOLE--
+                  20000444    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.data)
+                  2000044c    00000008                                   : exit.obj (.data)
+                  20000454    00000004                                   : stkdepth_vars.obj (.data)
+
+.bss       0    20000458    0000004c     UNINITIALIZED
+                  20000458    0000002c     main.obj (.bss:sContext)
+                  20000484    0000000c     (.common:speed_char)
+                  20000490    00000008     (.common:sRect)
+                  20000498    00000004     grlib-cm4f.lib : context.obj (.bss)
+                  2000049c    00000004     (.common:temp_p)
+                  200004a0    00000004     (.common:ulADC0_Value)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00002838 records: 2, size/record: 8, table size: 16
+	.data: load addr=000027f8, load size=00000028 bytes, run addr=20000400, run size=00000058 bytes, compression=rle
+	.bss: load addr=00002830, load size=00000008 bytes, run addr=20000458, run size=0000004c bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00002820 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_rle24
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+00001a99   ADCIntStatus
+00001c11   ADCProcessorTrigger
+00001bb9   ADCSequenceDataGet
+000019b1   C$$EXIT
+000009d9   CFAL96x64x16Init
+00001ca3   CPUcpsie
+00001c65   FPUEnable
+00001c75   FPULazyStackingEnable
+000011c1   FloatToChar
+00001cc1   GrContextFontSet
+0000163d   GrContextInit
+000010fd   GrDefaultStringRenderer
+00001b1f   GrFontBaselineGet
+00001bd9   GrFontCodepageGet
+00001b97   GrFontGlyphDataGet
+000005bd   GrFontGlyphRender
+00001b71   GrFontInfoGet
+00001cb9   GrMapISO8859_1_Unicode
+000013a9   GrRectFill
+00001c85   GrStringDraw
+00001b49   GrStringNextCharGet
+000015d3   GrStringWidthGet
+00001caf   IntMasterEnable
+000017fd   PortCIntHandler
+00001cc7   ResetISR
+UNDEFED    SHT$$INIT_ARRAY$$Base
+UNDEFED    SHT$$INIT_ARRAY$$Limit
+00000b5d   SysCtlClockSet
+00001ccd   SysCtlDelay
+00001271   Timer0IntHandler
+20000400   __STACK_END
+00000400   __STACK_SIZE
+20000400   __STACK_TOP
+00002838   __TI_CINIT_Base
+00002848   __TI_CINIT_Limit
+00002820   __TI_Handler_Table_Base
+0000282c   __TI_Handler_Table_Limit
+00000001   __TI_args_main
+00001445   __TI_auto_init
+2000044c   __TI_cleanup_ptr
+00001c95   __TI_decompress_none
+00001cd3   __TI_decompress_rle24
+20000450   __TI_dtors_ptr
+00000000   __TI_static_base__
+00001c51   __TI_zero_init
+00001893   __aeabi_d2f
+00001925   __aeabi_d2iz
+0000082d   __aeabi_dadd
+00000dd1   __aeabi_ddiv
+00000f07   __aeabi_dmul
+00000823   __aeabi_dsub
+00001a2f   __aeabi_f2d
+00001ac7   __aeabi_i2d
+0000130d   __aeabi_memcpy
+0000130d   __aeabi_memcpy4
+0000130d   __aeabi_memcpy8
+ffffffff   __binit__
+ffffffff   __c_args__
+20000000   __stack
+00001bf9   _args_main
+000018dd   _c_int00
+20000444   _lock
+00001c4b   _nop
+00001c43   _register_lock
+00001c3d   _register_unlock
+20000448   _unlock
+000019b5   abort
+ffffffff   binit
+20000424   button
+0000196d   copy_in
+00001005   display
+000019bd   exit
+00000000   g_pfnVectors
+000027e4   g_psDefaultCodePointMapTable
+000027bc   g_sCFAL96x64x16
+0000262c   g_sFontCm14
+000026f4   g_sFontFixed6x8
+20000410   ival
+20000420   last_button
+0000026d   main
+20000454   main_func_sp
+0000130d   memcpy
+20000428   num
+20000400   p1
+20000404   p2
+20000458   sContext
+20000490   sRect
+2000042c   show
+20000414   speed
+20000484   speed_char
+20000418   speed_int
+2000049c   temp_p
+2000040c   test
+20000408   turn
+200004a0   ulADC0_Value
+2000041c   vr
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   __TI_static_base__
+00000000   g_pfnVectors
+00000001   __TI_args_main
+0000026d   main
+00000400   __STACK_SIZE
+000005bd   GrFontGlyphRender
+00000823   __aeabi_dsub
+0000082d   __aeabi_dadd
+000009d9   CFAL96x64x16Init
+00000b5d   SysCtlClockSet
+00000dd1   __aeabi_ddiv
+00000f07   __aeabi_dmul
+00001005   display
+000010fd   GrDefaultStringRenderer
+000011c1   FloatToChar
+00001271   Timer0IntHandler
+0000130d   __aeabi_memcpy
+0000130d   __aeabi_memcpy4
+0000130d   __aeabi_memcpy8
+0000130d   memcpy
+000013a9   GrRectFill
+00001445   __TI_auto_init
+000015d3   GrStringWidthGet
+0000163d   GrContextInit
+000017fd   PortCIntHandler
+00001893   __aeabi_d2f
+000018dd   _c_int00
+00001925   __aeabi_d2iz
+0000196d   copy_in
+000019b1   C$$EXIT
+000019b5   abort
+000019bd   exit
+00001a2f   __aeabi_f2d
+00001a99   ADCIntStatus
+00001ac7   __aeabi_i2d
+00001b1f   GrFontBaselineGet
+00001b49   GrStringNextCharGet
+00001b71   GrFontInfoGet
+00001b97   GrFontGlyphDataGet
+00001bb9   ADCSequenceDataGet
+00001bd9   GrFontCodepageGet
+00001bf9   _args_main
+00001c11   ADCProcessorTrigger
+00001c3d   _register_unlock
+00001c43   _register_lock
+00001c4b   _nop
+00001c51   __TI_zero_init
+00001c65   FPUEnable
+00001c75   FPULazyStackingEnable
+00001c85   GrStringDraw
+00001c95   __TI_decompress_none
+00001ca3   CPUcpsie
+00001caf   IntMasterEnable
+00001cb9   GrMapISO8859_1_Unicode
+00001cc1   GrContextFontSet
+00001cc7   ResetISR
+00001ccd   SysCtlDelay
+00001cd3   __TI_decompress_rle24
+0000262c   g_sFontCm14
+000026f4   g_sFontFixed6x8
+000027bc   g_sCFAL96x64x16
+000027e4   g_psDefaultCodePointMapTable
+00002820   __TI_Handler_Table_Base
+0000282c   __TI_Handler_Table_Limit
+00002838   __TI_CINIT_Base
+00002848   __TI_CINIT_Limit
+20000000   __stack
+20000400   __STACK_END
+20000400   __STACK_TOP
+20000400   p1
+20000404   p2
+20000408   turn
+2000040c   test
+20000410   ival
+20000414   speed
+20000418   speed_int
+2000041c   vr
+20000420   last_button
+20000424   button
+20000428   num
+2000042c   show
+20000444   _lock
+20000448   _unlock
+2000044c   __TI_cleanup_ptr
+20000450   __TI_dtors_ptr
+20000454   main_func_sp
+20000458   sContext
+20000484   speed_char
+20000490   sRect
+2000049c   temp_p
+200004a0   ulADC0_Value
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+UNDEFED    SHT$$INIT_ARRAY$$Base
+UNDEFED    SHT$$INIT_ARRAY$$Limit
+
+[96 symbols]

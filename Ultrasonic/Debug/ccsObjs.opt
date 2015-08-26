@@ -1,0 +1,1 @@
+"./main.obj" "./startup_ccs.obj" "./drivers/cfal96x64x16.obj" "../interrupts_ccs.cmd" -l"libc.a" -l"D:/ti/StellarisWare/boards/ek-lm4f232/interrupts/ccs/../../../../driverlib/ccs-cm4f/Debug/driverlib-cm4f.lib" -l"D:/ti/StellarisWare/boards/ek-lm4f232/interrupts/ccs/../../../../grlib/ccs-cm4f/Debug/grlib-cm4f.lib" 
